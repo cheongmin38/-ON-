@@ -9,7 +9,7 @@ import {
   Heart, User, Phone, MapPin, Pill, Calendar, Activity,
   QrCode, Shield, Check, Volume2, Plus, Sparkles, Navigation,
   Trash2, AlertTriangle, ChevronRight, Settings, PhoneCall,
-  Bell, FileText, ArrowRight, RefreshCw, Send, ShieldCheck
+  Bell, FileText, ArrowRight, RefreshCw, Send, ShieldCheck, Home
 } from "lucide-react";
 import { 
   GuardianInfo, PatientInfo, SafeZone, Medication, 
@@ -146,7 +146,7 @@ export default function GuardianView({
     const escapePlace = "수변 아파트 앞 한강 산책로 부근";
     
     // Simulate immediate system alert
-    alert(`🚨 [긴급 경보 수신]\n${patientInfo.name} 환자분이 안전 구역(${safeZone.address} 반경 ${safeZone.radius}m)을 벗어나 '${escapePlace}'으로 이동 중입니다!`);
+    alert(`[긴급 경보 수신] ${patientInfo.name} 환자분이 안전 구역(${safeZone.address} 반경 ${safeZone.radius}m)을 벗어나 '${escapePlace}'으로 이동 중입니다!`);
     
     const newViolation = {
       id: `sv-${Date.now()}`,
@@ -161,7 +161,7 @@ export default function GuardianView({
     setNotificationsMock(prev => [
       {
         id: `push-${Date.now()}`,
-        title: "🚨 안심영역 이탈 경보",
+        title: "안심영역 이탈 경보",
         body: `${patientInfo.name}님이 안심반경을 초과하여 ${escapePlace}에 있습니다. 지도를 열어 추적하세요.`,
         time: "방금 전"
       },
@@ -382,7 +382,7 @@ export default function GuardianView({
             {/* Apple style Patient Bio & Medical Profile Container */}
             <div className="bg-white rounded-3xl p-5 border border-slate-200/60 shadow-[0_2px_12px_rgba(0,0,0,0.01)] space-y-4">
               <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#FF5E3A] to-[#FF9500] text-white font-extrabold text-sm flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-slate-100 text-[#3182f6] font-extrabold text-sm flex items-center justify-center border border-slate-200/50">
                   {patientInfo.name[0]}
                 </div>
                 <div>
@@ -458,8 +458,8 @@ export default function GuardianView({
 
                 {/* House home center pointer */}
                 <div className="absolute flex flex-col items-center">
-                  <div className="w-8 h-8 rounded-full bg-slate-950/80 border-2 border-white flex items-center justify-center shadow-lg text-white">
-                    🏠
+                  <div className="w-8 h-8 rounded-full bg-slate-900 border-2 border-white flex items-center justify-center shadow-lg text-white">
+                    <Home className="w-3.5 h-3.5 text-white" />
                   </div>
                   <span className="text-[9px] bg-slate-900 text-white px-1.5 py-0.5 rounded shadow mt-1 whitespace-nowrap">안심 중심지 (집)</span>
                 </div>
@@ -471,12 +471,12 @@ export default function GuardianView({
                   className="absolute translate-x-12 -translate-y-8 flex flex-col items-center z-10"
                 >
                   <div className="relative flex items-center justify-center">
-                    <span className="absolute inline-flex h-9 w-9 rounded-full bg-[#007AFF]/30 animate-ping" />
-                    <div className="w-8 h-8 rounded-full bg-[#007AFF] border-2 border-white flex items-center justify-center shadow-lg text-white">
-                      👩‍🦳
+                    <span className="absolute inline-flex h-9 w-9 rounded-full bg-[#3182f6]/30 animate-ping" />
+                    <div className="w-8 h-8 rounded-full bg-[#3182f6] border-2 border-white flex items-center justify-center shadow-lg text-white">
+                      <User className="w-4 h-4 text-white" />
                     </div>
                   </div>
-                  <span className="text-[9px] bg-[#007AFF] text-white px-1.5 py-0.5 rounded-full font-bold shadow-md mt-1 animate-bounce whitespace-nowrap">
+                  <span className="text-[9px] bg-[#3182f6] text-white px-1.5 py-0.5 rounded-full font-bold shadow-md mt-1 animate-bounce whitespace-nowrap">
                     {patientInfo.name} 환자
                   </span>
                 </motion.div>

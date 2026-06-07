@@ -111,42 +111,42 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto h-[780px] bg-slate-50 flex flex-col justify-between overflow-hidden relative shadow-2xl rounded-3xl border border-slate-100 font-sans">
+    <div className="w-full h-full md:max-w-md md:h-[90vh] md:max-h-[820px] md:my-auto md:rounded-3xl md:shadow-2xl md:border md:border-slate-200/50 bg-[#FAFAFB] flex flex-col justify-between overflow-hidden relative font-sans mx-auto">
       
       {/* 1. Splash Screen */}
       {screen === "SPLASH" && (
         <motion.div 
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute inset-0 bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-700 flex flex-col items-center justify-center text-white z-50 p-6"
+          className="absolute inset-0 bg-[#0F172A] flex flex-col items-center justify-center text-white z-50 p-6"
         >
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: [0.8, 1.1, 1], opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg mb-6 border border-white/20"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: [0.9, 1.02, 1], opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-6 border border-white/10"
           >
-            <Heart className="w-12 h-12 text-teal-200 fill-teal-100" />
+            <Heart className="w-10 h-10 text-[#3182f6] fill-[#3182f6]/25" />
           </motion.div>
           <motion.h1 
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-4xl font-extrabold tracking-wider"
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-4xl font-extrabold tracking-tight"
           >
-            기억<span className="text-teal-200">ON</span>
+            기억<span className="text-[#3182f6]">ON</span>
           </motion.h1>
           <motion.p 
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-white/80 font-medium text-sm mt-3 tracking-widest text-center"
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-slate-400 font-medium text-xs mt-3 tracking-widest text-center"
           >
-            “기억이 흐려져도, 안심은 선명하게”
+            기억이 흐려져도, 안심은 선명하게
           </motion.p>
-          <div className="absolute bottom-10 flex flex-col items-center gap-1 opacity-60">
+          <div className="absolute bottom-10 flex flex-col items-center gap-1 opacity-40">
             <Shield className="w-4 h-4 text-white animate-pulse" />
-            <span className="text-[11px] uppercase tracking-widest">Dementia Protection Service</span>
+            <span className="text-[10px] uppercase tracking-widest">Dementia Protection Service</span>
           </div>
         </motion.div>
       )}
@@ -154,42 +154,42 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
       {/* 2. Start Screen */}
       {screen === "START" && (
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="flex-1 flex flex-col p-8 justify-between"
+          className="flex-1 flex flex-col p-8 justify-between bg-white"
         >
           <div className="flex-1 flex flex-col justify-center items-center text-center mt-8">
-            <div className="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center mb-6">
-              <Heart className="w-10 h-10 text-teal-600" />
+            <div className="w-16 h-16 bg-[#3182f6]/5 rounded-full flex items-center justify-center mb-6">
+              <Heart className="w-8 h-8 text-[#3182f6]" />
             </div>
-            <h2 className="text-3xl font-extrabold text-slate-800 tracking-tight">기억ON</h2>
-            <div className="h-1 w-8 bg-teal-500 rounded-full my-3"></div>
-            <p className="text-slate-500 font-medium text-sm tracking-wide">
+            <h2 className="text-3xl font-extrabold text-[#191F28] tracking-tight">기억ON</h2>
+            <div className="h-1 w-6 bg-[#3182f6] rounded-full my-3"></div>
+            <p className="text-[#4E5968] font-medium text-sm tracking-tight">
               기억이 흐려져도, 안심은 선명하게
             </p>
             <p className="text-xs text-slate-400 mt-2 px-6">
-              실시간 치매 환자 안심 감지 및 기억 보존 솔루션
+              실시간 치매 환자 안심 감지 및 인지 기억 통합 지원 케어
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3.5">
             <button 
               onClick={() => setScreen("LOGIN")}
-              className="w-full py-4 px-6 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 px-6 bg-[#3182f6] hover:bg-[#1b64da] text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-2 text-sm shadow-xs"
             >
-              기존 계정으로 로그인 <ArrowRight className="w-4 h-4" />
+              로그인 <ArrowRight className="w-4 h-4" />
             </button>
             <button 
               onClick={() => {
                 setSignUpRole("GUARDIAN");
                 setScreen("SIGNUP");
               }}
-              className="w-full py-4 px-6 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-2xl shadow-sm border border-slate-200 transition-all text-center"
+              className="w-full py-4 px-6 bg-[#F2F4F6] hover:bg-[#E5E8EB] text-[#4E5968] font-bold rounded-2xl transition-all text-sm text-center"
             >
               처음이신가요? 회원가입하기
             </button>
             <div className="text-center">
-              <span className="text-xs text-slate-400">환자용 빠른 연결 테스트: 휴대폰에 `0101`로 로그인</span>
+              <span className="text-[11px] text-slate-400">환자용 빠른 테스트: 아이디에 `0101`로 즉시 접속</span>
             </div>
           </div>
         </motion.div>
@@ -200,12 +200,12 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex-1 flex flex-col p-8 justify-between"
+          className="flex-1 flex flex-col p-8 justify-between bg-white"
         >
           <div>
             <div className="mt-4 mb-8">
-              <h3 className="text-2xl font-extrabold text-slate-800">로그인</h3>
-              <p className="text-xs text-slate-500 mt-1">기억ON 서비스를 시작합니다</p>
+              <h3 className="text-2xl font-extrabold text-[#191F28] tracking-tight">로그인</h3>
+              <p className="text-xs text-slate-400 mt-1">기억ON 서비스를 시작합니다</p>
             </div>
 
             <form onSubmit={handleLoginSubmit} className="space-y-4">
@@ -222,10 +222,10 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                   <button
                     type="button"
                     onClick={() => setLoginRole("GUARDIAN")}
-                    className={`py-2.5 px-4 rounded-xl border text-xs font-bold flex flex-col items-center justify-center gap-1.5 transition-all outline-none ${
+                    className={`py-3 px-4 rounded-xl border text-xs font-bold flex flex-col items-center justify-center gap-1.5 transition-all outline-none ${
                       loginRole === "GUARDIAN" 
-                        ? "border-teal-500 bg-teal-50 text-teal-700 ring-2 ring-teal-150" 
-                        : "border-slate-200 bg-white text-slate-500 hover:bg-slate-50"
+                        ? "border-[#3182f6] bg-[#3182f6]/5 text-[#3182f6]" 
+                        : "border-slate-100 bg-[#F2F4F6] text-slate-500 hover:bg-[#E5E8EB]"
                     }`}
                   >
                     <Heart className="w-4 h-4 text-rose-500 fill-rose-500/20" />
@@ -234,13 +234,13 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                   <button
                     type="button"
                     onClick={() => setLoginRole("PATIENT")}
-                    className={`py-2.5 px-4 rounded-xl border text-xs font-bold flex flex-col items-center justify-center gap-1.5 transition-all outline-none ${
+                    className={`py-3 px-4 rounded-xl border text-xs font-bold flex flex-col items-center justify-center gap-1.5 transition-all outline-none ${
                       loginRole === "PATIENT"
-                        ? "border-teal-500 bg-teal-50 text-teal-700 ring-2 ring-teal-150"
-                        : "border-slate-200 bg-white text-slate-500 hover:bg-slate-50"
+                        ? "border-[#3182f6] bg-[#3182f6]/5 text-[#3182f6]"
+                        : "border-slate-100 bg-[#F2F4F6] text-slate-500 hover:bg-[#E5E8EB]"
                     }`}
                   >
-                    <User className="w-4 h-4 text-indigo-500" />
+                    <User className="w-4 h-4 text-[#3182f6]" />
                     치매 환자 로그인
                   </button>
                 </div>
@@ -255,7 +255,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                     placeholder="숫자만 입력해 주세요"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-4 py-3 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6] transition-all"
                   />
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                     placeholder="비밀번호(4자리 이상)"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-10 pr-10 py-3 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-10 py-3 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6] transition-all"
                   />
                   <button 
                     type="button"
@@ -285,7 +285,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                 <button 
                   type="button"
                   onClick={() => setScreen("FORGOT_PASSWORD")}
-                  className="text-xs text-teal-600 hover:underline font-semibold"
+                  className="text-xs text-[#3182f6] hover:underline font-semibold"
                 >
                   비밀번호를 잊으셨나요?
                 </button>
@@ -293,7 +293,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
 
               <button 
                 type="submit"
-                className="w-full py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-md transition-all mt-4"
+                className="w-full py-4 bg-[#3182f6] hover:bg-[#1b64da] text-white font-bold rounded-xl transition-all mt-4 text-sm"
               >
                 로그인 완료
               </button>
@@ -301,10 +301,10 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
           </div>
 
           <div className="border-t border-slate-100 pt-4 text-center">
-            <span className="text-xs text-slate-500">아직 계정이 없으신가요? </span>
+            <span className="text-xs text-slate-400">아직 계정이 없으신가요? </span>
             <button 
               onClick={() => setScreen("SIGNUP")}
-              className="text-xs text-teal-600 font-bold hover:underline pl-1"
+              className="text-xs text-[#3182f6] font-bold hover:underline pl-1"
             >
               회원가입하기
             </button>
@@ -317,12 +317,12 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex-1 flex flex-col p-8 justify-between overflow-y-auto"
+          className="flex-1 flex flex-col p-8 justify-between overflow-y-auto bg-white"
         >
           <div>
             <div className="mt-2 mb-6">
-              <h3 className="text-2xl font-extrabold text-slate-800">가입 양식</h3>
-              <p className="text-xs text-slate-500 mt-1">안전을 지킬 준비를 시작합니다</p>
+              <h3 className="text-2xl font-extrabold text-[#191F28] tracking-tight">가입 양식</h3>
+              <p className="text-xs text-slate-400 mt-1">안전을 지킬 준비를 시작합니다</p>
             </div>
 
             <form onSubmit={handleSignUpSubmit} className="space-y-3.5">
@@ -339,25 +339,25 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                   <button
                     type="button"
                     onClick={() => setSignUpRole("GUARDIAN")}
-                    className={`py-3 px-4 rounded-xl border text-sm font-semibold flex flex-col items-center justify-center gap-1.5 transition-all ${
+                    className={`py-3 px-4 rounded-xl border text-xs font-bold flex flex-col items-center justify-center gap-1.5 transition-all ${
                       signUpRole === "GUARDIAN" 
-                        ? "border-teal-500 bg-teal-50 text-teal-700 ring-2 ring-teal-200" 
-                        : "border-slate-200 bg-white text-slate-600"
+                        ? "border-[#3182f6] bg-[#3182f6]/5 text-[#3182f6]" 
+                        : "border-slate-100 bg-[#F2F4F6] text-slate-600"
                     }`}
                   >
-                    <Heart className="w-4 h-4" />
+                    <Heart className="w-4 h-4 text-rose-500" />
                     보호자 가입
                   </button>
                   <button
                     type="button"
                     onClick={() => setSignUpRole("PATIENT")}
-                    className={`py-3 px-4 rounded-xl border text-sm font-semibold flex flex-col items-center justify-center gap-1.5 transition-all ${
+                    className={`py-3 px-4 rounded-xl border text-xs font-bold flex flex-col items-center justify-center gap-1.5 transition-all ${
                       signUpRole === "PATIENT"
-                        ? "border-teal-500 bg-teal-50 text-teal-700 ring-2 ring-teal-200"
-                        : "border-slate-200 bg-white text-slate-600"
+                        ? "border-[#3182f6] bg-[#3182f6]/5 text-[#3182f6]" 
+                        : "border-slate-100 bg-[#F2F4F6] text-slate-600"
                     }`}
                   >
-                    <User className="w-4 h-4" />
+                    <User className="w-4 h-4 text-[#3182f6]" />
                     환자 본인 가입
                   </button>
                 </div>
@@ -373,7 +373,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                     placeholder="실명을 입력해 주세요"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transform transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6] transform transition-all"
                   />
                 </div>
               </div>
@@ -388,7 +388,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                     placeholder="숫자 기호 없이 입력 (아이디로 사용)"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transform transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6] transform transition-all"
                   />
                 </div>
               </div>
@@ -403,7 +403,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                     placeholder="4자리 이상 입력"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transform transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6] transform transition-all"
                   />
                 </div>
               </div>
@@ -418,14 +418,14 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                     placeholder="비밀번호 확인"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transform transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6] transform transition-all"
                   />
                 </div>
               </div>
 
               <button 
                 type="submit"
-                className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-md transition-all"
+                className="w-full py-4 bg-[#3182f6] hover:bg-[#1b64da] text-white font-bold rounded-xl transition-all text-sm shadow-xs mt-2"
               >
                 회원가입 완료
               </button>
@@ -446,14 +446,14 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
       {/* 5. Password Find Screen */}
       {screen === "FORGOT_PASSWORD" && (
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="flex-1 flex flex-col p-8 justify-between"
+          className="flex-1 flex flex-col p-8 justify-between bg-white"
         >
           <div>
             <div className="mt-4 mb-8">
-              <h3 className="text-2xl font-extrabold text-slate-800">비밀번호 찾기</h3>
-              <p className="text-xs text-slate-500 mt-1">인증을 거쳐 비밀번호를 재설정합니다</p>
+              <h3 className="text-2xl font-extrabold text-[#191F28] tracking-tight">비밀번호 찾기</h3>
+              <p className="text-xs text-slate-400 mt-1">인증을 거쳐 비밀번호를 재설정합니다</p>
             </div>
 
             {!passwordSuccess ? (
@@ -472,11 +472,11 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                       placeholder="휴대폰 예) 01012345678"
                       value={forgotPhone}
                       onChange={(e) => setForgotPhone(e.target.value)}
-                      className="flex-1 px-3 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      className="flex-1 px-3 py-2.5 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6]"
                     />
                     <button 
                       onClick={handleSendCode}
-                      className="px-4 py-2.5 bg-slate-800 text-white text-xs font-bold rounded-xl hover:bg-slate-700 transition"
+                      className="px-4 py-2.5 bg-[#191F28] text-white text-xs font-bold rounded-xl hover:bg-slate-700 transition"
                     >
                       전송
                     </button>
@@ -496,11 +496,11 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                         placeholder="4자리 숫자"
                         value={verificationCode}
                         onChange={(e) => setVerificationCode(e.target.value)}
-                        className="flex-1 px-3 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="flex-1 px-3 py-2.5 bg-[#F2F4F6] border-0 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#3182f6]"
                       />
                       <button 
                         onClick={handleVerifyCode}
-                        className="px-4 py-2.5 bg-teal-600 text-white text-xs font-bold rounded-xl hover:bg-teal-500 transition"
+                        className="px-4 py-2.5 bg-[#3182f6] text-white text-xs font-bold rounded-xl hover:bg-[#1b64da] transition"
                       >
                         확인
                       </button>
@@ -523,11 +523,11 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                   placeholder="새로운 비밀번호"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-700 text-sm focus:outline-none"
+                  className="w-full px-4 py-2.5 bg-[#F2F4F6] border-0 rounded-xl text-[#191F28] text-sm focus:outline-none"
                 />
                 <button 
                   onClick={finishForgotPassword}
-                  className="w-full py-3 bg-teal-600 text-white text-sm font-bold rounded-xl hover:bg-teal-700 transition"
+                  className="w-full py-3.5 bg-[#3182f6] text-white text-sm font-bold rounded-xl hover:bg-[#1b64da] transition animate-pulse"
                 >
                   변경하고 로그인하기
                 </button>
@@ -538,7 +538,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
           <div className="text-center py-2">
             <button 
               onClick={() => setScreen("LOGIN")}
-              className="text-xs text-slate-500 hover:underline"
+              className="text-xs text-slate-400 hover:underline"
             >
               로그인 화면으로 돌아가기
             </button>
@@ -551,21 +551,21 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex-1 flex flex-col p-8 justify-between"
+          className="flex-1 flex flex-col p-8 justify-between bg-white"
         >
           <div>
             <div className="mt-2 mb-6">
-              <span className="px-2.5 py-1 bg-teal-50 text-teal-700 text-[11px] font-bold rounded-full border border-teal-100">
+              <span className="px-2.5 py-1 bg-[#3182f6]/10 text-[#3182f6] text-[11px] font-bold rounded-full">
                 권한 안내
               </span>
-              <h3 className="text-2xl font-extrabold text-slate-800 mt-2">필수 권한 동의</h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <h3 className="text-2xl font-extrabold text-[#191F28] tracking-tight mt-2">필수 권한 동의</h3>
+              <p className="text-xs text-slate-400 mt-1">
                 기억ON 서비스의 안전 감지와 긴급 전화를 지원하기 위해 다음 권한 설정이 필요합니다.
               </p>
             </div>
 
             <div className="space-y-4 text-slate-700 mt-4">
-              <div className="flex gap-3.5 items-start p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
+              <div className="flex gap-3.5 items-start p-3 bg-[#FAFAFB] rounded-xl border border-slate-100/60 shadow-xs">
                 <div className="p-2 bg-blue-50 text-blue-600 rounded-lg mt-0.5">
                   <Navigation className="w-4 h-4 fill-blue-500 text-blue-500" />
                 </div>
@@ -577,9 +577,9 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                 </div>
               </div>
 
-              <div className="flex gap-3.5 items-start p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
-                <div className="p-2 bg-teal-50 text-teal-600 rounded-lg mt-0.5">
-                  <Bell className="w-4 h-4 text-teal-600" />
+              <div className="flex gap-3.5 items-start p-3 bg-[#FAFAFB] rounded-xl border border-slate-100/60 shadow-xs">
+                <div className="p-2 bg-blue-50 text-[#3182f6] rounded-lg mt-0.5">
+                  <Bell className="w-4 h-4 text-[#3182f6]" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-slate-800">푸시 알림 권한 (필수)</h4>
@@ -589,7 +589,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                 </div>
               </div>
 
-              <div className="flex gap-3.5 items-start p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
+              <div className="flex gap-3.5 items-start p-3 bg-[#FAFAFB] rounded-xl border border-slate-100/60 shadow-xs">
                 <div className="p-2 bg-pink-50 text-pink-600 rounded-lg mt-0.5">
                   <PhoneCall className="w-4 h-4 text-pink-600" />
                 </div>
@@ -601,7 +601,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
                 </div>
               </div>
 
-              <div className="flex gap-3.5 items-start p-3 bg-white rounded-xl border border-slate-100 shadow-sm">
+              <div className="flex gap-3.5 items-start p-3 bg-[#FAFAFB] rounded-xl border border-slate-100/60 shadow-xs">
                 <div className="p-2 bg-violet-50 text-violet-600 rounded-lg mt-0.5">
                   <Camera className="w-4 h-4 text-violet-600" />
                 </div>
@@ -618,7 +618,7 @@ export default function SplashAndAuth({ onCompleteAuth }: SplashAndAuthProps) {
           <button 
             type="button"
             onClick={handlePermissionsCompleted}
-            className="w-full py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-2xl shadow-lg transition-all"
+            className="w-full py-4 bg-[#3182f6] hover:bg-[#1b64da] text-white font-bold rounded-2xl shadow-[#3182f6]/10 transition-all text-sm mb-2"
           >
             허용 및 시작하기
           </button>

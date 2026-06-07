@@ -329,40 +329,13 @@ export default function App() {
         </div>
       </aside>
 
-      {/* RIGHT DISPLAY: Becomes full-screen on mobile devices and beautifully centered on desktop */}
-      <main className="flex-1 flex items-center justify-center p-0 md:p-8 bg-[#F4F5F6] min-h-screen md:min-h-0">
+      {/* RIGHT DISPLAY: Becomes full-screen on computer screens and fits perfectly on mobile layout device heights */}
+      <main className="flex-1 flex flex-col min-h-screen md:min-h-0 bg-white">
         
-        {/* Responsive Phone Chassis: fills screen on mobile, styled mockup on desktop */}
-        <div className="w-full max-w-none md:max-w-[420px] h-screen md:h-[840px] bg-slate-900 md:rounded-[48px] md:border-[10px] md:border-slate-800 md:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] relative overflow-hidden flex flex-col">
+        {/* Full View Area Container */}
+        <div className="w-full h-screen md:h-screen bg-white relative overflow-hidden flex flex-col">
           
-          {/* iOS Simulated Notch & Dynamic Island - Only visible on desktop */}
-          <div className="hidden md:block absolute top-1.5 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-full z-45 flex items-center justify-center">
-            {/* Camera lens simulation */}
-            <div className="w-3.5 h-3.5 rounded-full bg-slate-950/80 border border-slate-800/40 absolute left-2" />
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-950/50 absolute right-4" />
-          </div>
-
-          {/* iOS System Status Bar Indicator Layer - Hidden on real phones */}
-          <header className="hidden md:flex h-12 bg-white/5 backdrop-blur-md text-slate-800 px-6 pt-3 justify-between items-center select-none z-40 text-xs font-semibold" id="statusbar-sim">
-            {/* Clock time (left item) */}
-            <span className={`${role === "PATIENT" ? "text-slate-900" : "text-slate-800"}`}>
-              {phoneTime || "09:41"}
-            </span>
-
-            {/* Notch spacers */}
-            <div className="w-24 h-4" />
-
-            {/* Battery / Wi-Fi signals (right items) */}
-            <div className="flex items-center gap-1.5 font-bold">
-              <span className={`text-[10px] uppercase font-black tracking-widest ${role === "PATIENT" ? "text-slate-600" : "text-slate-450"}`}>LTE</span>
-              <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c3.9 3.89 10.21 3.89 14.1 0l-1.37-1.37C18.26 16.07 19 14.12 19 12c0-4.97-4.03-9-9-9z"/></svg>
-              <div className="w-5 h-2.5 border border-current rounded-sm p-0.5 flex items-center">
-                <div className="h-full w-3 bg-current rounded-2xs" />
-              </div>
-            </div>
-          </header>
-
-          {/* Primary View Router within Phone screen */}
+          {/* Primary View Router within responsive workspace container */}
           <div className="flex-1 bg-white relative overflow-hidden flex flex-col">
             <AnimatePresence mode="wait">
               
@@ -437,9 +410,6 @@ export default function App() {
 
             </AnimatePresence>
           </div>
-
-          {/* iOS Curved Bottom Navigation indicator stroke */}
-          <div className="hidden md:block absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-[#F1F3F5] rounded-full z-45" />
 
         </div>
 
