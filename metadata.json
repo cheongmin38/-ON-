@@ -1,0 +1,6 @@
+{
+  "name": "기억ON",
+  "description": "치매 환자의 소중한 기억을 지키고, 보호자와 환자를 실시간으로 연결하여 안심할 수 있는 일상을 제공하는 치매 케어 및 보호 앱",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
